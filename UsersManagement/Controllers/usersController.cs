@@ -99,10 +99,32 @@ namespace UsersManagement.Controllers
 
         [HttpDelete]
         [Route("[action]/{id}")]
-        public IActionResult DeleteUser(int id)
+        public IActionResult DeleteUserbyId(int id)
         {
             var deletedUser = _users.FirstOrDefault(x => x.Id == id);
             if (deletedUser!=null)
+            {
+                _users.Remove(deletedUser);
+                return Ok();
+            }
+
+            return NotFound();
+
+
+        }
+
+        /// <summary>
+        /// Delete user by Firstname
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+
+        [HttpDelete]
+        [Route("[action]/{name}")]
+        public IActionResult DeleteUserbyName(string name)
+        {
+            var deletedUser = _users.FirstOrDefault(x => x.Firstname == name);
+            if (deletedUser != null)
             {
                 _users.Remove(deletedUser);
                 return Ok();

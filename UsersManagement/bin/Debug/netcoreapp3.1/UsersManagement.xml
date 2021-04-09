@@ -31,11 +31,18 @@
             <param name="user"></param>
             <returns></returns>
         </member>
-        <member name="M:UsersManagement.Controllers.usersController.DeleteUser(System.Int32)">
+        <member name="M:UsersManagement.Controllers.usersController.DeleteUserbyId(System.Int32)">
             <summary>
             Delete user by ID
             </summary>
             <param name="id"></param>
+        </member>
+        <member name="M:UsersManagement.Controllers.usersController.DeleteUserbyName(System.String)">
+            <summary>
+            Delete user by Firstname
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>
